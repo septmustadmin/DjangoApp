@@ -1,0 +1,42 @@
+{% extends "users/base.html" %}
+{% block title %} BAITING {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+
+<div class="container p-1 my-1">
+    <div class="jumbotron" style="background-color: #ffffff" >
+                    
+        <h1 class="display-4" style="text-transform:uppercase" >PRE-TEXTING ATTACKS</h1><br><br><br>
+            <h2>What is PRE-TEXTING attacks?</h2><br>
+                
+            <p style=" text-align: justify">
+            "Baiting attacks" refer to a type of social engineering attack where an attacker uses a lure or bait to trick a victim into taking a certain
+            action that is beneficial to the attacker. The goal of baiting attacks is to entice a victim with an offer that seems too good to be true or too
+            enticing to pass up, and then manipulate the victim into performing an action that compromises their security.
+            <br><br>
+            One common example of a baiting attack is the use of fake USB drives. An attacker may leave a USB drive in a public place, such as a coffee shop or
+            library, with a label indicating that it contains valuable information or a tempting label like "Company Payroll." When a victim picks up the USB drive
+            and plugs it into their computer, it will automatically download malware that infects the system, giving the attacker access to sensitive information.
+            <br><br>
+            Another example of baiting attacks is the use of fake websites or online offers. An attacker may create a fake website that mimics a legitimate online
+            retailer or financial institution, offering the victim an irresistible discount or free product in exchange for their personal information. Once the victim
+            provides their information, the attacker can use it for malicious purposes, such as identity theft or unauthorized access to the victim's accounts.
+            <br><br>
+            To avoid becoming a victim of baiting attacks, it is essential to be cautious when presented with unexpected offers or lures. Never plug in or open files
+            from unknown sources, and always verify the legitimacy of websites and offers before providing personal information or making a purchase.
+            </p><br><br><br>
+          
+            <h3>A video to explain about PRE_TEXTING attacks : </h3><br>
+            <iframe width="100%" height="432" src="https://www.youtube.com/embed/IYZ0cOnWnpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=TdQQ_SQWOFk&list=PLArtLLAoYSrNc8AJW6l_unVfg6CEz6iEL"> Video taken from ECBM Insurance Brokers & Consultants Youtube Channel</a>
+
+    </div>
+</div> 
+{% else %}
+           
+<meta http-equiv="refresh" content="1; url = {% url 'login' %}" />
+
+{% endif %}
+{% endblock content %}

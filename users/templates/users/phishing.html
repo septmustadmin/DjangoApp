@@ -1,0 +1,56 @@
+{% extends "users/base.html" %}
+{% block title %} PHISHING {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+<div class="container p-1 my-1">
+  <div class="jumbotron" style="background-color: #ffffff" >
+          
+    <h1 class="display-4" style="text-transform:uppercase" >PHISHING ATTACKS</h1><br><br><br>
+    <h2>What is PHISHING attacks?</h2><br>
+    <p style=" text-align: justify">
+      Phishing is a type of online scam in which attackers create fraudulent websites, emails, or other forms of communication
+      that appear to be from legitimate sources, such as banks, social media platforms, or e-commerce sites. The goal of phishing
+      is to trick victims into providing sensitive information, such as passwords, credit card numbers, or other personal details,
+      which can then be used for fraudulent activities.
+      <br><br>
+      Phishing attacks often use social engineering techniques to manipulate victims into clicking on links or downloading malicious
+      software. For example, an attacker might send an email that appears to be from a bank, claiming that there is a problem with the 
+      victim's account and asking them to click on a link to resolve the issue. The link may lead to a fake website that looks like the 
+      real one, where the victim will be asked to enter their login credentials.
+      <br><br>
+      Phishing attacks can be very sophisticated and difficult to detect, as attackers may use advanced techniques such as domain spoofing,
+      where they create a website that appears to be from a legitimate domain, or spear phishing, where they target specific individuals
+      with personalized messages that are tailored to their interests and appear to be from a trusted source.
+    </p><br><br><br>
+
+    <h3>A video to explain about PHISHING attacks : </h3><br>
+    <iframe width="100%" height="432" src="https://www.youtube.com/embed/GFEjN9f1i1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=TdQQ_SQWOFk&list=PLArtLLAoYSrNc8AJW6l_unVfg6CEz6iEL"> Video taken from ECBM Insurance Brokers & Consultants Youtube Channel</a>
+
+    <br><br><br><br><br>
+
+    <h3>There are several steps you can take to prevent falling victim to a phishing attack:</h3><br><br>
+
+    <ul style=" text-align: justify">
+      <li>Be cautious of unsolicited emails and messages: If you receive an unexpected email or message that requests personal information, be cautious. Avoid clicking on any links or downloading attachments unless you're sure they're safe.</li>
+      <li>Verify the sender: Check the email address or username of the sender to make sure it's legitimate. Often, phishing emails will use a similar, but slightly different, email address or username to try and trick you.</li>
+      <li>Check the URL: Always check the URL of any links in emails or messages to ensure that they're legitimate. Hover your mouse over the link to see the URL before clicking on it. If it looks suspicious or unfamiliar, don't click on it.</li>
+      <li>Use two-factor authentication: Two-factor authentication (2FA) is an additional layer of security that requires you to enter a code or use a biometric identifier (like a fingerprint) in addition to your password. This can help to prevent attackers from accessing your accounts even if they have your login credentials.</li>
+      <li>Keep your software up to date: Keep your operating system, web browser, and security software up to date with the latest security patches and updates. This can help to prevent attackers from exploiting known vulnerabilities to gain access to your system.</li>
+      <li>Use anti-phishing software: Anti-phishing software can help to identify and block suspicious emails and messages before they reach your inbox. Consider using anti-phishing software to add an extra layer of protection against phishing attacks.</li>
+      <li>Educate yourself: Stay informed about the latest phishing techniques and trends by reading news articles and security blogs. This can help you to recognize suspicious emails and messages and avoid falling victim to phishing attacks.  </li>
+    </ul><br><br><br>
+
+  </div>
+</div> 
+{% else %}
+ 
+<meta http-equiv="refresh" content="1; url = {% url 'login' %}" />
+
+
+{% endif %}
+
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "users/base.html" %}
+{% block title %} VISHING {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+
+<div class="container p-1 my-1">
+    <div class="jumbotron" style="background-color: #ffffff" >
+            
+      <h1 class="display-4" style="text-transform:uppercase" >VISHING ATTACKS</h1><br><br><br>
+      <h2>What is VISHING attacks?</h2><br>
+      <p style=" text-align: justify">
+        "Vishing" is a term used to describe a type of social engineering attack that is carried out over the telephone or VoIP (Voice over Internet Protocol)
+        networks. The word "vishing" is a combination of "voice" and "phishing", which refers to a similar type of attack carried out via email.
+        <br><br>
+        The goal of vishing is to trick the victim into divulging sensitive information such as personal details, bank account information, credit card numbers,
+        passwords, and other confidential data. The attacker usually poses as a legitimate authority figure, such as a bank representative, tech support agent,
+        or law enforcement official, and creates a sense of urgency or fear to persuade the victim to provide the requested information.
+        <br><br>
+        Vishing attacks can take several forms, including:
+        <br><br>
+            <ul style=" text-align: justify">
+                <li>Caller ID Spoofing: The attacker manipulates the caller ID to display a legitimate phone number, such as a bank's customer service line, to gain the victim's trust.</li>
+                <li>Interactive Voice Response (IVR) Spoofing: The attacker sets up a fake IVR system that mimics a legitimate one, to prompt the victim to provide sensitive information.</li>
+                <li>Voice Phishing: The attacker uses social engineering tactics to convince the victim to provide confidential information over the phone.</li>
+            </ul><br><br>
+        <p style=" text-align: justify">
+        To protect against vishing attacks, individuals should be cautious when receiving unsolicited phone calls, verify the identity of the caller before providing
+        any personal information, avoid sharing sensitive information over the phone, and report any suspicious activity to the relevant authorities.
+      </p><br><br><br>
+  
+      <h3>A video to explain about VISHING attacks : </h3><br>
+      <iframe width="100%" height="432" src="https://www.youtube.com/embed/XBkzBrXlle0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=TdQQ_SQWOFk&list=PLArtLLAoYSrNc8AJW6l_unVfg6CEz6iEL"> Video taken from ECBM Insurance Brokers & Consultants Youtube Channel</a>
+    </div>
+  </div> 
+  {% else %}
+   
+  <meta http-equiv="refresh" content="1; url = {% url 'login' %}" />
+  
+  
+  {% endif %}
+  
+  
+  {% endblock content %}

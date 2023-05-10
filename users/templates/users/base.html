@@ -1,0 +1,75 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<div >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width= device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Font awesome icons -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <title>{% block title %} {% endblock %} </title>
+  </head>
+  <body     padding:0; margin:0;>
+      <nav class="navbar navbar-expand-md navbar-light; py-4 " style="background-color: #196e6e;" >
+        <h5><a style="color:white" class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a></h5>
+        <div class="navbar-nav ml-auto">
+          <table style="width:100%; text-align: center;" >
+            <tr>
+                <td><img src="{% static "users/media/septmustlogo.png" %}" alt="logo"  width="45" height="45" /> &nbsp;</td>
+                <td><h3><a style="color:white" class="active" href="/"> SEPTMUST</a></h3></td>
+            </tr>
+          </table>	
+        </div>
+            <div class="navbar-nav ml-auto">
+              {% if user.is_authenticated %}
+              <h5><a style="color:white"  class="active" href="{% url 'users-profile' %}">{{user.first_name.title|default:'Guest'}}&nbsp;<i class="fa fa-fw fa-user"></i></a></h5>&nbsp;&nbsp;&nbsp;&nbsp;
+              <h5><a style="color:white"  href="{% url 'logout' %}">Sign Out&nbsp;<i class="fa fa-fw fa-unlock-alt"></i></a></h5>&nbsp;
+              {% else %}
+              <h5><a style="color:white"  href="{% url 'users-register' %}">Sign Up&nbsp;<i class="fa fa-fw fa-lock"></i></a></h5>
+              {% endif %}
+            </div>
+      </nav>
+
+          
+          <!--Any flash messages pop up in any page because this is the base template-->
+          {% if messages %}
+            <div class="alert alert-dismissible" role="alert">
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+              {% endfor %}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+          {% block content %}{% endblock %}
+
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+      <!-- A plugin for password show/hide  -->
+      <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+
+  </body>
+
+  <footer>
+    <nav class="navbar navbar-expand-md navbar-light; py-4 " style="background-color: #196e6e"> 
+      <table style="width:100%; text-align: center" >
+        <tr>
+        <td>  <h6 style="color: white; background-color: #196e6e; text-align: center; margin: 0; ">© Copyright Reserve SEPTMUST 2023</h6></td>
+        </tr>
+    </table>
+    </nav>
+  </footer>
+</div>
+</html>

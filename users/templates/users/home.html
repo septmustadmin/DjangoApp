@@ -1,0 +1,83 @@
+{% extends "users/base.html" %}
+{% block title %} Home Page {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div><br>
+    <div class="container p-1 my-1">
+        <div class="jumbotron" style="background-color: #ffffff; text-align: justify">
+            
+            <h2 style="text-transform:uppercase" >WELCOME <i>{{user.first_name.title|default:'Guest'}}</i>, TO SOCIAL 
+                ENGINEERING TRAINING MODULE FOR UNIVERSITY STUDENTS (SEPTMUST)</h2><br><br><br>
+            <h3>What is SEPTMUST?</h3><br><br>
+            <div style="text-align: justify">
+
+                <p>
+                    Social Engineering Prevention Training Module for University Student (SEPTMUST) is a guide developed as a web-based application training module focusing on
+                    five type of social engineering technique which is <b>Phishing, Vishing, Pre-Texting, Quid Pro Quo, and Baiting</b>. SEPTMUST will be incorporated with videos, slides,
+                    minigames, quizzes to help increase the user understanding of social engineering. As social engineering becomes one of the highest success rate attacks
+                    in the world, SEPTMUS are developed to help lower the success rate of the attacks.
+                </p>
+            </div><br><br>
+            <h3>What is Social Engineering</h3><br><br>
+            <div style="text-align: justify">
+
+                <p>
+                    Social engineering is the use of psychological manipulation and deception to influence people into taking certain actions or revealing confidential information.
+                    It involves exploiting human weaknesses such as trust, curiosity, fear, and greed to gain access to information or systems that would normally be inaccessible.
+                    <br><br>
+                    Social engineering attacks can take many forms, including phishing emails, pretexting, baiting, and quid pro quo tactics. In a phishing attack, for example,
+                    an attacker may send an email that appears to be from a trusted source such as a bank or a social media site, asking the recipient to click on a link or provide
+                    personal information. Pretexting involves creating a false pretext or story to gain access to sensitive information, while baiting involves leaving a tempting
+                    object, such as a USB drive, in a public place in the hope that someone will pick it up and use it.
+                    <br><br>
+                    Social engineering attacks can be highly effective, as they exploit human psychology and emotions rather than technical vulnerabilities. To protect against
+                    social engineering, it is important to be aware of common tactics and to be cautious when receiving unsolicited requests for information or actions. It is
+                    also important to implement security measures such as two-factor authentication and to educate employees about the risks of social engineering attacks.
+                </p>
+            </div><br><br>
+            <div>
+                <h3>A video to explain about the attacks : </h3><br>
+                <iframe width="100%" height="432" src="https://www.youtube.com/embed/v7VTJhkJUUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=v7VTJhkJUUY&ab_channel=MalwareFox"> Video taken from MalwareFox Youtube Channel</a>
+            </div><br><br>
+            <div style="text-align: justify">
+                <p>
+                   Now that we know what social engineering is, lets move on to the next topic. 
+                </p>
+            </div><br>
+            <h3>Please choose one of the topics below to start:</h3><br><br><br>    
+            <div> 
+                    <ul>
+                    <li><a style="color:black; font-size:150%" class="active" href="{% url 'phishing' %}"> PHISHING</a></li>
+                    <li><a style="color:black; font-size:150%" class="active" href="{% url 'vishing' %}"> VISHING</a></li>
+                    <li><a style="color:black; font-size:150%" class="active" href="{% url 'pretexting' %}"> PRE-TEXTING</a></li>
+                    <li><a style="color:black; font-size:150%" class="active" href="{% url 'quidproquo' %}"> QUID PRO QUO</a></li>
+                    <li><a style="color:black; font-size:150%" class="active" href="{% url 'baiting' %}"> BAITING</a></li>
+                    </ul>	
+            </div>
+        </div>
+    </div>
+</div>
+        
+            
+{% else %}
+<meta http-equiv="refresh" content="0.5; url = {% url 'login' %}" />
+<div class="jumbotron" style="background-color: #ffffff">
+    <h2 class="display-4"; class= "uppercase">WELCOME {{user.first_name.title.|default:'GUEST'}}, TO SOCIAL ENGINEERING TRAINING MODULE FOR UNIVERSITY STUDENTS (SEPTMUST)</h2><br><br><br><br><br><br>
+    <p class="lead">
+        <div> 
+            <table style="width:100%; text-align: center">
+                <tr>
+                    <td><a class="btn btn-primary btn-lg" style="background-color: black; border-color: black;" href="{% url 'login' %}" role="button">Please Sign in</a></td>
+                </tr>
+            </table>			
+        </div>
+    </p> 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</b>
+
+{% endif %}
+
+
+{% endblock content %}

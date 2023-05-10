@@ -1,0 +1,44 @@
+{% extends "users/base.html" %}
+{% block title %} QUID PRO QUO {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+
+
+<div class="container p-1 my-1">
+    <div class="jumbotron" style="background-color: #ffffff" >
+                    
+        <h1 class="display-4" style="text-transform:uppercase" >QUID PRO QUO ATTACKS</h1><br><br><br>
+            <h2>What is QUID PRO QUO attacks?</h2><br>
+                
+            <p style=" text-align: justify">
+                A quid pro quo attack is a type of social engineering attack where an attacker offers a service or benefit to a victim in exchange for sensitive
+                information or access to their system. The attacker typically poses as a legitimate service provider, such as an IT support technician or a software
+                vendor, and offers assistance or a free service to the victim.
+                <br><br>
+                The attacker will often make the offer seem too good to be true, and will require the victim to provide login credentials, personal information, or
+                access to their computer system in order to receive the service or benefit. Once the attacker has gained access to the victim's system or information,
+                they can use it to carry out further attacks or steal sensitive data.
+                <br><br>
+                For example, an attacker might call a company and claim to be from the IT department, offering to install a software update for free. In exchange, the
+                attacker asks for the victim's login credentials. If the victim provides the credentials, the attacker can use them to gain unauthorized access to the
+                company's network and steal sensitive data.
+                <br><br>
+                To protect against quid pro quo attacks, it's important to be cautious when dealing with unsolicited offers of assistance or benefits, especially if
+                the offer seems too good to be true. Always verify the identity of the person making the offer, and never provide sensitive information or access to
+                your system unless you are certain it is necessary and legitimate.
+            </p><br><br><br>
+          
+            <h3>A video to explain about QUID PRO QUO attacks : </h3><br>
+            <br><br>
+            <iframe width="100%" height="432" src="https://www.youtube.com/embed/soHEoUybfrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=TdQQ_SQWOFk&list=PLArtLLAoYSrNc8AJW6l_unVfg6CEz6iEL"> Video taken from ECBM Insurance Brokers & Consultants Youtube Channel</a>
+
+    </div>
+</div> 
+{% else %}
+           
+<meta http-equiv="refresh" content="1; url = {% url 'login' %}" />
+
+{% endif %}
+{% endblock content %}

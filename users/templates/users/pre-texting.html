@@ -1,0 +1,40 @@
+{% extends "users/base.html" %}
+{% block title %} PRE-TEXTING {% endblock title%}
+{% block content %}
+{% if user.is_authenticated %}
+
+    
+    <div class="container p-1 my-1">
+        <div class="jumbotron" style="background-color: #ffffff" >
+                        
+            <h1 class="display-4" style="text-transform:uppercase" >PRE-TEXTING ATTACKS</h1><br><br><br>
+                <h2>What is PRE-TEXTING attacks?</h2><br>
+                    
+                <p style=" text-align: justify">
+                    Pretexting is a form of social engineering in which an attacker creates a fabricated scenario to trick someone into providing sensitive
+                    information or access to a system. The attacker assumes a false identity or pretext to gain the victim's trust and may use various techniques
+                    such as persuasion, impersonation, or manipulation to achieve their goal.
+                    <br><br>
+                    For example, an attacker might pose as a customer service representative or a law enforcement officer and use the pretext of an urgent issue to
+                    obtain sensitive information such as passwords or financial data. They may also use pretexting to gain physical access to a building or system 
+                    by posing as a repair technician or maintenance worker.
+                    <br><br>
+                    Pretexting can be used in a variety of contexts, such as phishing attacks, social media scams, and identity theft. It is a common tactic used by
+                    cybercriminals to exploit human vulnerabilities and gain unauthorized access to systems and information.
+                    <br><br>    
+                    To avoid falling victim to pretexting, it is important to be skeptical of unsolicited requests for information or access, verify the identity of
+                    anyone requesting sensitive information, and follow security protocols such as using strong passwords and two-factor authentication.
+                </p><br><br><br>
+              
+                <h3>A video to explain about PRE_TEXTING attacks : </h3><br>
+                <iframe width="100%" height="432" src="https://www.youtube.com/embed/jnoE07TqNcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <br><a style="color:black; font-size:12px" class="active" href="https://www.youtube.com/watch?v=TdQQ_SQWOFk&list=PLArtLLAoYSrNc8AJW6l_unVfg6CEz6iEL"> Video taken from ECBM Insurance Brokers & Consultants Youtube Channel</a>
+
+        </div>
+    </div> 
+{% else %}
+               
+<meta http-equiv="refresh" content="1; url = {% url 'login' %}" />
+
+{% endif %}
+{% endblock content %}
