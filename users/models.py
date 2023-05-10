@@ -1,20 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
-from  embed_video.fields  import  EmbedVideoField
-
-#Create your models here.
-class  tutorial(models.Model):
-	tutorial_Title = models.CharField(max_length=200)
-	tutorial_Body = models.TextField()
-	tutorial_Video = EmbedVideoField()
-
-	class  Meta:
-		verbose_name_plural = "Tutorial"
-
-	def  __str__(self):
-		return  str(self.tutorial_Title) if  self.tutorial_Title  else  " "
-
 
 # Extending User Model Using a One-To-One Link
 class Profile(models.Model):
